@@ -1,0 +1,35 @@
+#include<iostream>            //including the library iostream
+using namespace std;
+int main()                //starting with the min function
+{
+    int a;                        
+    int b;
+    cout<<"Enter any integer a (start of the range):"; //taking input from user range(a,b)
+    cin>>a;
+    cout<<"Enter any integer b (end of the range, a<b ):";
+    cin>>b;
+    for(int i=a;i<=b;i++)
+    {
+        if (i%5==0 && i%7==0)           //first condition
+        {
+            cout<<"FooBar"<<endl;
+        }
+        else if (i%5==0 && i%7!=0)        //second condition
+        {
+            cout<<"Foo"<<endl;
+        }
+        else if (i%5!=0 && i%7==0)       //third condition
+        {
+            cout<<"Bar"<<endl;
+        }
+        else                          //last condition
+        {
+            cout<<"Baz"<<endl;
+        }
+        
+    
+    }
+    return 0;
+}
+ //Time complexity ---> O(n)
+//This program is tested for larger input range like (20,40) and for smaller input range  (2,3) and accordingly prints the correct output.
