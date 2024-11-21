@@ -1,0 +1,20 @@
+#input number of test cases
+n = int(input("Enter the number of test cases: "))
+results = []
+#taking inputs from user
+inputs = [input("Enter X, Y, Z: ") for _ in range(n)]
+
+for data in inputs:
+    X, Y, Z = map(int, data.split())
+
+    total_stud = X * Y
+    # Calculating the percentage of students who passed
+    percentage_passed= (Z / total_stud) * 100
+
+    if percentage_passed > 50.0:
+        results.append("YES")
+    else:
+        results.append("NO")
+
+# Print all results at once
+print("\n".join(results))
