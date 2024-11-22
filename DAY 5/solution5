@@ -1,0 +1,23 @@
+#include<iostream>         //including library.
+using namespace std;
+int main()                  //starting with main function.
+{
+    int n,a[n];         
+    int sum=0;                //initializing sum to zero.
+    cout<<"Enter n:";
+    cin>>n;
+    cout<<"Enter the integers:";
+    for(int i=0;i<n;i++)          //using for loop to input the integers of the array.
+    { 
+        cin>>a[i];
+        if(a[i]>0)              //check if the integer is positive using if condition.
+        {
+            sum+=a[i];         //updating sum .
+            
+        }
+    }
+    cout<<"Sum of positive integers = "<<sum<<endl;     //printing the final output i.e sum.
+    return 0;
+}
+
+//Time and space complexity=O(n).
