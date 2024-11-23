@@ -1,0 +1,21 @@
+#include<iostream>                                     //including library.
+using namespace std;
+int main()
+{
+   
+    char s[500];                                        //initializing the array of maximum size 500.
+    cout<<"Enter any string:";                          //input the string.
+    cin.getline(s,500);                                 //use getline function to traverse the whole string.
+    int sum=0;                                          //initialize sum=0.
+    for(int i=0;s[i];i++)                               //using for loop.
+    {
+        if(s[i]=='a'|| s[i]=='e'|| s[i]=='i'||s[i]=='o'|| s[i]=='u'||
+           s[i]=='A'|| s[i]=='E'|| s[i]=='I'||s[i]=='O'|| s[i]=='U')                //lower and uppercase for the vowels in if condition.
+        {
+            sum++;                                    //incrementing sum.
+        }
+    }
+    cout<<"The sum of vowels in the given string is:"<<sum;       //printing the output.
+    return 0;
+
+}
