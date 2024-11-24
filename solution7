@@ -1,0 +1,68 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void setZeroes(vector<vector<int>>& matrix, int row, int column)
+{
+   
+    vector<bool> rows(row, false);
+    vector<bool> cols(column, false);
+
+    for (int i = 0; i < row; i++) 
+    {
+        for (int j = 0; j < column; j++)
+        {
+            if (matrix[i][j] == 0) 
+            {
+                rows[i] = true;  // Marking the row.
+                cols[j] = true;  // Marking the column.
+            }
+        }
+    }
+
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < column; j++) 
+        {
+            if (rows[i] || cols[j]) 
+            {
+                matrix[i][j] = 0;
+            }
+        }
+    }
+}
+
+int main() 
+{
+    int row, column;      
+   cout<<"Enter no.of rows:";
+   cin>>row;
+   cout<<"Enter no.of columns:";
+   cin>>column;
+   cout<<"Enter matrix:"<<endl;
+
+   
+    vector<vector<int>> matrix(row, vector<int>(column));        //read the  matrix.
+    for (int i = 0; i < row; i++) 
+    {
+        for (int j = 0; j < column; j++) 
+        {
+            cin >> matrix[i][j];
+        }
+    }
+    
+    setZeroes(matrix, row, column);                          // Call the function to modify the matrix
+    cout<<"\nModified matrix:"<<endl;
+
+   
+    for (int i = 0; i < row; i++)                       // Printing  the modified matrix 
+    {                                                  
+        for (int j = 0; j < column; j++)                
+        {
+            cout << matrix[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
